@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Link({ url, text }) {
+function Link({ url = '#', texto = 'Link' }) {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
-      {text}
+      {texto}
     </a>
   );
 }

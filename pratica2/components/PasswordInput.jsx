@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function PasswordInput() {
   // Estado para controlar se a senha está visível ou não
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -10,6 +11,7 @@ function PasswordInput() {
   };
 
   return (
+    <>
     <div>
       <label htmlFor="password">Senha:</label>
       <input
@@ -21,7 +23,9 @@ function PasswordInput() {
       <button type="button" onClick={togglePasswordVisibility}>
         {passwordVisible ? 'Ocultar' : 'Mostrar'} Senha
       </button>
+      
     </div>
+    </>
   );
 }
 

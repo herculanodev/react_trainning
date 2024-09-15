@@ -1,21 +1,16 @@
-import './App.css';
-import Header from '../components/Header';
-import PasswordInput from '../components/PasswordInput';
-import InputPesquisa from '../components/InputPesquisa';
-import Link from '../components/Link';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login'; // Caminho para a página de Login
+import Home from './pages/Home';   // Caminho para a página de Home
 
 function App() {
   return (
-    <>
-      <div className='card'>
-             <Header/>
-             <PasswordInput/>
-             <InputPesquisa/>
-             <Link url='https://www.youtube.com/watch?v=qYnA9wWFHLI&t=1903s' text='weightless 4' />
-            
-        <p>este parágrafo em JSX</p>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 

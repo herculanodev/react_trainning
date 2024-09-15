@@ -1,9 +1,11 @@
 import React from 'react';
-function Conteudo(){
-    return(
-        <main></main>
 
-
-    );
+function Conteudo(props) {
+  return (
+    <main className={props.estilo}>
+      {props.children}
+    </main>
+  );
 }
+
 export default Conteudo;

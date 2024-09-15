@@ -1,16 +1,12 @@
-import icone from '../components/assetsComponents/icone.png '
 import React from 'react';
-function Icone(){
-    return(
-        <>
-        <div>
-       
-        <img src={icone} alt="Icone" />
-       
-        </div>
-        </>
 
-
-    )
+function Icone(props) {
+  return (
+    <div>
+      {/* Exibe a imagem se props.imagem for fornecido */}
+      <img src={props.imagem} alt={props.text} />
+    </div>
+  );
 }
+
 export default Icone;

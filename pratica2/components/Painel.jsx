@@ -1,18 +1,16 @@
 import React from 'react';
-function Painel(){
-    return(
-        <article>
-            <h3></h3>
-            <ul>
-                <li>
 
-                </li>
-            </ul>
-        </article>
-
-    )
-
-
+function Painel(props) {
+  return (
+    <article>
+      <h3>{props.texto}</h3> {/* Mudança de 'props.text' para 'props.texto' */}
+      <ul>
+        {props.itens.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </article>
+  );
 }
 
- export default Painel;
+export default Painel;

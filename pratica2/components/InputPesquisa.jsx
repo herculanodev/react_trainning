@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function InputPesquisa({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
 
-  // Função para capturar a entrada no input
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
+  // Atualiza o debouncedTerm com um atraso de 300ms
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedTerm(searchTerm);
+    }, 300);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [searchTerm]);
+
+  // Dispara a pesquisa quando o debouncedTerm mudar
+  useEffect(() => {
     if (onSearch) {
-      onSearch(value); // Executa a função de pesquisa passada como prop
+      onSearch(debouncedTerm);
     }
+  }, [debouncedTerm, onSearch]);
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   return (
@@ -20,7 +34,7 @@ function InputPesquisa({ onSearch }) {
         id="search"
         name="search"
         value={searchTerm}
-        onChange={handleInputChange} // Atualiza o estado e aciona a função de pesquisa
+        onChange={handleInputChange}
         placeholder="Digite para pesquisar..."
       />
     </div>

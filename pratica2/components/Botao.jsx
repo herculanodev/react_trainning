@@ -1,20 +1,11 @@
 import React from 'react';
 
-function Botao(){
-    return(
-        <>
-        <div>
+function Botao(props) {
+  return (
+    <button onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
+}
 
-        <button>{props.texto}</button>
-
-
-        </div>
-        
-        
-        </>
-
-
-    )
-
-}   
 export default Botao;

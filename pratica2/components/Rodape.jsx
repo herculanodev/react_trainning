@@ -1,9 +1,11 @@
 import React from 'react';
-function Rodape(){
-    return(
-    <footer></footer>
 
-    )
-
+function Rodape(props) {
+  return (
+    <footer>
+      <p>{props.texto}</p>
+    </footer>
+  );
 }
+
 export default Rodape;
