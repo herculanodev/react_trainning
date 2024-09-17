@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa o hook de navegação
 import Cabecalho from '../../components/Cabecalho';
@@ -8,13 +10,12 @@ import InputEmail from '../../components/InputEmail';
 import Botao from '../../components/Botao';
 import PasswordInput from '../../components/PasswordInput';
 
-
 function Perfil() {
   const navigate = useNavigate(); // Inicializa o hook para navegação
 
   // Função para redirecionar para o perfil (ou outra página, se preferir)
   const handleRedirect = () => {
-    navigate('/home'); // Redireciona para a página de perfil (ou outra rota, se preferir)
+    navigate('/perfil'); // Redireciona para a página de perfil (ou outra rota, se preferir)
   };
 
   return (

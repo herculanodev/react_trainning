@@ -1,14 +1,25 @@
 import React from 'react';
-import Cabecalho from '../../components/Cabecalho'; // Verifique se este caminho está correto
-import Conteudo from '../../components/Conteudo';  // Verifique se este caminho está correto
-import Secao from '../../components/Secao';        // Importe o Secao corretamente
+import { useNavigate } from 'react-router-dom';  // Importa o hook de navegação
+import Cabecalho from '../../components/Cabecalho';
+import Conteudo from '../../components/Conteudo';
+import Secao from '../../components/Secao';
+import Menu from '../../components/Menu';
 
 function Home() {
+  const navigate = useNavigate(); // Hook para navegação
+
+  // Função para redirecionar para a página de perfil
+  const handleNavigateToPerfil = () => {
+    navigate('/perfil');
+  };
+
   return (
     <>
+      <Menu />
       <Cabecalho />
-      <Conteudo estilo="conteudo-principal">
-        <Secao texto="Página Inicial" />
+      <Conteudo estilo="pagina-inicial">
+        {/* Passa a função de redirecionamento como prop */}
+        <Secao texto="Página Inicial" onClick={handleNavigateToPerfil} />
       </Conteudo>
     </>
   );

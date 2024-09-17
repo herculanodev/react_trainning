@@ -5,6 +5,8 @@ import Rodape from '../../components/Rodape';
 import PasswordInput from '../../components/PasswordInput';
 import InputEmail from '../../components/InputEmail';
 import Botao from '../../components/Botao';
+import Menu
+ from '../../components/Menu';
 
 function Login() {
   const navigate = useNavigate(); // Inicializa o hook para navegação
@@ -16,12 +18,13 @@ function Login() {
 
   return (
     <>
+        <Menu/>
       <Conteudo>
         <InputEmail />
         <PasswordInput />
       </Conteudo>
       <Botao onClick={handleLogin}>Entrar</Botao>
-      <Rodape texto="Copyright (C) 2024" />
+      <Rodape  texto="Copyright (C) 2024" />
     </>
   );
 }
